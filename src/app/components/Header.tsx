@@ -1,12 +1,13 @@
+import React from 'react'
+import SearchBar from '@/components/SearchBar'
+
 interface HeaderProps {
   onSearch: (query: string) => void
   isLoading: boolean
   initialQuery?: string
 }
 
-import SearchBar from '@/components/SearchBar'
-
-export default function Header({ onSearch, isLoading, initialQuery }: HeaderProps) {
+const Header = React.memo(function Header({ onSearch, isLoading, initialQuery }: HeaderProps) {
   return (
     <div className="text-center mb-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -22,4 +23,6 @@ export default function Header({ onSearch, isLoading, initialQuery }: HeaderProp
       />
     </div>
   )
-} 
+})
+
+export default Header 

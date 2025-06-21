@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { Calendar, Clock, Loader2 } from 'lucide-react';
 
@@ -14,7 +14,7 @@ interface PodcastEpisodeCardProps {
   isLoading?: boolean;
 }
 
-export default function PodcastEpisodeCard({
+const PodcastEpisodeCard = React.memo(function PodcastEpisodeCard({
   episode,
   onSummarize,
   existingSummary,
@@ -152,4 +152,6 @@ export default function PodcastEpisodeCard({
       </div>
     </div>
   );
-}
+});
+
+export default PodcastEpisodeCard;

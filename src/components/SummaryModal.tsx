@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { PodcastSummary } from '@/types'
 
@@ -10,7 +10,7 @@ interface SummaryModalProps {
   summary: PodcastSummary | null
 }
 
-export default function SummaryModal({ isOpen, onClose, summary }: SummaryModalProps) {
+const SummaryModal = React.memo(function SummaryModal({ isOpen, onClose, summary }: SummaryModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -92,4 +92,6 @@ export default function SummaryModal({ isOpen, onClose, summary }: SummaryModalP
       </div>
     </div>
   )
-} 
+})
+
+export default SummaryModal 

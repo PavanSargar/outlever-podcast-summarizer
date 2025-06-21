@@ -1,3 +1,4 @@
+import React from 'react'
 import PodcastEpisodeCard from '@/components/PodcastEpisodeCard'
 import Pagination from './Pagination'
 import { PodcastEpisode, PaginationInfo } from '@/types'
@@ -13,7 +14,7 @@ interface EpisodesListProps {
   searchLoading: boolean
 }
 
-export default function EpisodesList({
+const EpisodesList = React.memo(function EpisodesList({
   episodes = [],
   pagination,
   searchQuery = '',
@@ -52,4 +53,6 @@ export default function EpisodesList({
       )}
     </>
   )
-} 
+})
+
+export default EpisodesList 

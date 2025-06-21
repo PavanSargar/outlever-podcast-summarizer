@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { Search, Loader2 } from 'lucide-react'
 
 interface SearchBarProps {
@@ -9,7 +9,7 @@ interface SearchBarProps {
   initialQuery?: string
 }
 
-export default function SearchBar({ onSearch, isLoading = false, initialQuery = '' }: SearchBarProps) {
+const SearchBar = React.memo(function SearchBar({ onSearch, isLoading = false, initialQuery = '' }: SearchBarProps) {
   const [query, setQuery] = useState(initialQuery)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,4 +49,6 @@ export default function SearchBar({ onSearch, isLoading = false, initialQuery = 
       </div>
     </form>
   )
-} 
+})
+
+export default SearchBar 

@@ -1,3 +1,4 @@
+import React from 'react'
 import { RefreshCw } from 'lucide-react'
 
 interface NoResultsProps {
@@ -5,7 +6,7 @@ interface NoResultsProps {
   onRetry: () => void
 }
 
-export default function NoResults({ searchQuery = '', onRetry }: NoResultsProps) {
+const NoResults = React.memo(function NoResults({ searchQuery = '', onRetry }: NoResultsProps) {
   return (
     <div className="text-center py-12">
       <p className="text-gray-600 mb-4">No podcasts found for "{searchQuery}"</p>
@@ -18,4 +19,6 @@ export default function NoResults({ searchQuery = '', onRetry }: NoResultsProps)
       </button>
     </div>
   )
-} 
+})
+
+export default NoResults 

@@ -1,3 +1,4 @@
+import React from 'react'
 import { AlertCircle } from 'lucide-react'
 
 interface ErrorDisplayProps {
@@ -5,7 +6,7 @@ interface ErrorDisplayProps {
   onClose: () => void
 }
 
-export default function ErrorDisplay({ error, onClose }: ErrorDisplayProps) {
+const ErrorDisplay = React.memo(function ErrorDisplay({ error, onClose }: ErrorDisplayProps) {
   return (
     <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md flex items-center gap-2">
       <AlertCircle className="w-5 h-5 text-red-500" />
@@ -18,4 +19,6 @@ export default function ErrorDisplay({ error, onClose }: ErrorDisplayProps) {
       </button>
     </div>
   )
-} 
+})
+
+export default ErrorDisplay 

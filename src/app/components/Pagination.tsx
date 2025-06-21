@@ -1,3 +1,4 @@
+import React from 'react'
 import { PaginationInfo } from '@/types'
 
 interface PaginationProps {
@@ -6,7 +7,7 @@ interface PaginationProps {
   isLoading: boolean
 }
 
-export default function Pagination({ pagination, onPageChange, isLoading }: PaginationProps) {
+const Pagination = React.memo(function Pagination({ pagination, onPageChange, isLoading }: PaginationProps) {
   if (!pagination) return null;
   
   return (
@@ -32,4 +33,6 @@ export default function Pagination({ pagination, onPageChange, isLoading }: Pagi
       </button>
     </div>
   )
-} 
+})
+
+export default Pagination 
