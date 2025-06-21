@@ -28,7 +28,7 @@ function EpisodesList({
     <>
       <div className="mb-6">
         <p className="text-sm text-gray-600">
-          Found {pagination?.total?.toLocaleString() || 0} episodes for "{searchQuery}"
+          Found {pagination?.total?.toLocaleString() || 0} episodes for &quot;{searchQuery}&quot;
         </p>
       </div>
       

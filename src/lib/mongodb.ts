@@ -7,7 +7,11 @@ if (!process.env.MONGODB_URI) {
 const uri = process.env.MONGODB_URI
 
 declare global {
-  var mongoose: any
+  // eslint-disable-next-line no-var
+  var mongoose: {
+    conn: typeof import('mongoose') | null
+    promise: Promise<typeof import('mongoose')> | null
+  }
 }
 
 let cached = global.mongoose

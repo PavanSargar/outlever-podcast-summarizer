@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 import { Calendar, Clock, Loader2 } from 'lucide-react';
 
@@ -72,9 +73,11 @@ function PodcastEpisodeCard({
       <div className="flex gap-4">
         {episode.image && (
           <div className="flex-shrink-0">
-            <img
+            <Image
               src={episode.image}
               alt={episode.title}
+              width={96}
+              height={96}
               className="w-24 h-24 rounded-lg object-cover"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
