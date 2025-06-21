@@ -14,7 +14,7 @@ interface PodcastEpisodeCardProps {
   isLoading?: boolean;
 }
 
-const PodcastEpisodeCard = React.memo(function PodcastEpisodeCard({
+function PodcastEpisodeCard({
   episode,
   onSummarize,
   existingSummary,
@@ -152,6 +152,6 @@ const PodcastEpisodeCard = React.memo(function PodcastEpisodeCard({
       </div>
     </div>
   );
-});
+}
 
-export default PodcastEpisodeCard;
+export default React.memo(PodcastEpisodeCard);

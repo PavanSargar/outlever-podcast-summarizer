@@ -6,7 +6,7 @@ interface ErrorDisplayProps {
   onClose: () => void
 }
 
-const ErrorDisplay = React.memo(function ErrorDisplay({ error, onClose }: ErrorDisplayProps) {
+function ErrorDisplay({ error, onClose }: ErrorDisplayProps) {
   return (
     <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md flex items-center gap-2">
       <AlertCircle className="w-5 h-5 text-red-500" />
@@ -19,6 +19,6 @@ const ErrorDisplay = React.memo(function ErrorDisplay({ error, onClose }: ErrorD
       </button>
     </div>
   )
-})
+}
 
-export default ErrorDisplay 
+export default React.memo(ErrorDisplay) 

@@ -9,7 +9,7 @@ interface SearchBarProps {
   initialQuery?: string
 }
 
-const SearchBar = React.memo(function SearchBar({ onSearch, isLoading = false, initialQuery = '' }: SearchBarProps) {
+function SearchBar({ onSearch, isLoading = false, initialQuery = '' }: SearchBarProps) {
   const [query, setQuery] = useState(initialQuery)
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,6 +49,6 @@ const SearchBar = React.memo(function SearchBar({ onSearch, isLoading = false, i
       </div>
     </form>
   )
-})
+}
 
-export default SearchBar 
+export default React.memo(SearchBar) 

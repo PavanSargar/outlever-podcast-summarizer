@@ -7,7 +7,7 @@ interface PaginationProps {
   isLoading: boolean
 }
 
-const Pagination = React.memo(function Pagination({ pagination, onPageChange, isLoading }: PaginationProps) {
+function Pagination({ pagination, onPageChange, isLoading }: PaginationProps) {
   if (!pagination) return null;
   
   return (
@@ -33,6 +33,6 @@ const Pagination = React.memo(function Pagination({ pagination, onPageChange, is
       </button>
     </div>
   )
-})
+}
 
-export default Pagination 
+export default React.memo(Pagination) 

@@ -10,7 +10,7 @@ interface SummaryModalProps {
   summary: PodcastSummary | null
 }
 
-const SummaryModal = React.memo(function SummaryModal({ isOpen, onClose, summary }: SummaryModalProps) {
+function SummaryModal({ isOpen, onClose, summary }: SummaryModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -92,6 +92,6 @@ const SummaryModal = React.memo(function SummaryModal({ isOpen, onClose, summary
       </div>
     </div>
   )
-})
+}
 
-export default SummaryModal 
+export default React.memo(SummaryModal) 

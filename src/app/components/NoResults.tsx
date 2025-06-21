@@ -6,7 +6,7 @@ interface NoResultsProps {
   onRetry: () => void
 }
 
-const NoResults = React.memo(function NoResults({ searchQuery = '', onRetry }: NoResultsProps) {
+function NoResults({ searchQuery = '', onRetry }: NoResultsProps) {
   return (
     <div className="text-center py-12">
       <p className="text-gray-600 mb-4">No podcasts found for "{searchQuery}"</p>
@@ -19,6 +19,6 @@ const NoResults = React.memo(function NoResults({ searchQuery = '', onRetry }: N
       </button>
     </div>
   )
-})
+}
 
-export default NoResults 
+export default React.memo(NoResults) 

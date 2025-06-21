@@ -14,7 +14,7 @@ interface EpisodesListProps {
   searchLoading: boolean
 }
 
-const EpisodesList = React.memo(function EpisodesList({
+function EpisodesList({
   episodes = [],
   pagination,
   searchQuery = '',
@@ -53,6 +53,6 @@ const EpisodesList = React.memo(function EpisodesList({
       )}
     </>
   )
-})
+}
 
-export default EpisodesList 
+export default React.memo(EpisodesList) 

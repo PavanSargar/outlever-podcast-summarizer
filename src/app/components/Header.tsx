@@ -7,7 +7,7 @@ interface HeaderProps {
   initialQuery?: string
 }
 
-const Header = React.memo(function Header({ onSearch, isLoading, initialQuery }: HeaderProps) {
+function Header({ onSearch, isLoading, initialQuery }: HeaderProps) {
   return (
     <div className="text-center mb-8">
       <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -23,6 +23,6 @@ const Header = React.memo(function Header({ onSearch, isLoading, initialQuery }:
       />
     </div>
   )
-})
+}
 
-export default Header 
+export default React.memo(Header) 
