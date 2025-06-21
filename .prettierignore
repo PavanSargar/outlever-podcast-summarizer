@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+dist
+build
+*.lock
+*.log
+.env*
+public/
+*.config.js
+*.config.mjs
+*.config.ts 
